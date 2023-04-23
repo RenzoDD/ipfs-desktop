@@ -1,0 +1,60 @@
+{
+    "name": "ipfs-desktop",
+    "version": "0.0.0",
+    "description": "IPFS GUI Uploader",
+    "main": "src/index.js",
+    "scripts": {
+        "start": "electron .",
+        "pack": "electron-builder build --dir",
+        "dist": "electron-builder build"
+    },
+    "author": {
+        "name": "Renzo Diaz",
+        "email": "renzo.diaz@remadi.net"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "ipfs-http-client": "^60.0.0"
+    },
+    "devDependencies": {
+        "electron": "^24.1.2",
+        "electron-builder": "^23.6.0"
+    },
+    "build": {
+        "productName": "IPFS Uploader",
+        "appId": "io.ipfs.uploader",
+        "nsis": {
+            "artifactName": "IPFS Uploader Setup ${version}.${ext}",
+            "uninstallDisplayName": "IPFS Uploader"
+        },
+        "asar": true,
+        "dmg": {
+            "contents": [
+                {
+                    "x": 110,
+                    "y": 150
+                },
+                {
+                    "x": 240,
+                    "y": 150,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ],
+            "icon": "src/views/img/icon.icns"
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb",
+                "rpm"
+            ],
+            "category": "Files",
+            "icon": "src/views/img/icon.icns"
+        },
+        "win": {
+            "target": "NSIS",
+            "icon": "src/views/img/icon.ico"
+        }
+    }
+}
