@@ -44,20 +44,41 @@
     </div>
 
     <div id="frmCredentials" class="frm m-3 d-none">
-        <div class="mb-3">
-            <label for="txtUser">User:</label>
-            <input type="text" id="txtUser" class="form-control">
+        <div class="input-group">
+            <div class="form-floating">
+                <input type="text" id="txtHost" class="form-control">
+                <label for="txtHost">Host</label>
+            </div>
+            <div class="form-floating">
+                <input type="number" id="txtPort" class="form-control">
+                <label for="txtPort">Port</label>
+            </div>
         </div>
         <div class="mb-3">
-            <label for="txtKey">Key:</label>
-            <input type="text" id="txtKey" class="form-control">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="https">
+                <label class="form-check-label" for="https">
+                    https
+                </label>
+            </div>
         </div>
+        <div class="input-group mb-3">
+            <div class="form-floating">
+                <input type="text" id="txtUser" class="form-control">
+                <label for="txtUser">Username</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" id="txtKey" class="form-control">
+                <label for="txtKey">Key</label>
+            </div>
+        </div>
+
         <div class="mb-3 text-center">
             <button id="btnSave" class="btn btn-success" onclick="btnSave_OnClick()">Save</button>
             <button class="btn btn-primary" onclick="frmUpload_Load()">Upload</button>
         </div>
     </div>
-    
+
     <script src="vendor/bootstrap.js"></script>
     <script src="js/app.js"></script>
 

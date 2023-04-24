@@ -22,9 +22,9 @@ async function progress(length) {
 
 async function btnUpload_OnClick() {
     const client = ipfsClient.create({
-        host: 'ipfs.infura.io',
-        port: 5001,
-        protocol: 'https',
+        host: store.get('credentials.host'),
+        port: store.get('credentials.port'),
+        protocol: store.get('credentials.protocol'),
         headers: {
             authorization: 'Basic ' + Buffer.from(store.get('credentials.user') + ':' + store.get('credentials.key')).toString('base64')
         }
@@ -34,9 +34,11 @@ async function btnUpload_OnClick() {
         var buffer = fs.readFileSync(fileData.files[0].path);
         bytes = buffer.length;
         var result = await client.add(buffer, { progress });
+        fileData.value = null;
     } else if (cbxText.checked && txtData.value != "") {
         bytes = txtData.value.length;
         var result = await client.add(txtData.value, { rawLeaves: true, progress });
+        txtData.value = "";
     }
 
     pbPercentage.innerHTML = result.cid;

@@ -46,4 +46,4 @@ const Store = require('electron-store');
 const store = new Store();
 
 if (!store.get('credentials'))
-	store.set('credentials', { user: '', key: '' });
+	store.set('credentials', { host: 'ipfs.infura.io', port: 5001, protocol: 'https', user: '', key: '' });
