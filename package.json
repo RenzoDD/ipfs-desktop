@@ -1,6 +1,6 @@
 {
     "name": "ipfs-desktop",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "IPFS GUI Uploader",
     "main": "src/index.js",
     "scripts": {
