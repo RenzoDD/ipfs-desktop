@@ -1,6 +1,6 @@
 {
     "name": "ipfs-desktop",
-    "version": "0.0.0",
+    "version": "1.0.0",
     "description": "IPFS GUI Uploader",
     "main": "src/index.js",
     "scripts": {
@@ -14,7 +14,8 @@
     },
     "license": "MIT",
     "dependencies": {
-        "ipfs-http-client": "^60.0.0"
+        "electron-store": "^8.1.0",
+        "ipfs-http-client": "^56.0.0"
     },
     "devDependencies": {
         "electron": "^24.1.2",
