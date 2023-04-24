@@ -7,4 +7,4 @@ function FormOpen(frm) {
 	frm.classList.remove('d-none');
 }
 
-FormOpen(frmStart)
+FormOpen(frmUpload)

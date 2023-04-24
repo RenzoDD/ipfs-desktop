@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="vendor/bootstrap.css">
     <link rel="stylesheet" href="vendor/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <title>IPFS Uploader</title>
 </head>
@@ -15,10 +16,35 @@
 <body>
     <script src="vendor/bootstrap.js"></script>
     <script src="js/app.js"></script>
-    
-    <div id="frmStart" class="frm m-3">
 
+    <div id="frmUpload" class="frm m-3">
+        <h2>
+            IPFS Uploader
+        </h2>
+        <div class="mb-3 text-center">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" name="type" type="radio" id="cbxFile" onchange="cbxFile_OnChange()" checked>
+                <label class="form-check-label" for="cbxFile">File</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" name="type" type="radio" id="cbxText" onchange="cbxFile_OnChange()">
+                <label class="form-check-label" for="cbxText">Text</label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <input type="file" id="fileData" class="form-control">
+            <input type="text" class="form-control d-none" id="txtData">
+        </div>
+        <div class="mb-3">
+            <div class="progress">
+                <div id="pbPercentage" class="progress-bar bg-success" style="width: 0%"></div>
+            </div>
+        </div>
+        <div class="mb-3 text-center">
+            <button id="btnUpload" class="btn btn-success" onclick="btnUpload_OnClick()">Upload</button>
+        </div>
     </div>
+    <script src="js/frm/upload.js"></script>
 </body>
 
 </html>

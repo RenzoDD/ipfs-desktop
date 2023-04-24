@@ -24,14 +24,16 @@ app.on('window-all-closed', () => {
 	await app.whenReady();
 
 	myWindow = new BrowserWindow({
-		minWidth: 400,
-		minHeight: 500,
+		width: 600,
+		height: 270,
 		webPreferences: {
 			//devTools: false,
 			nodeIntegration: true,
-			//contextIsolation: false
+			contextIsolation: false
 		},
 		icon: __dirname + "\\views\\img\\icon.png",
+		resizable: false,
+		maximizable: false,
 		autoHideMenuBar: true,
 		//show: false
 	})
