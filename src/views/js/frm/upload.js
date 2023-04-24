@@ -1,14 +1,6 @@
-const fs = require('fs');
-
-const ipfsClient = require('ipfs-http-client');
-const client = ipfsClient.create({
-    host: 'ipfs.infura.io',
-    port: 5001,
-    protocol: 'https',
-    headers: {
-        authorization: 'Basic ' + Buffer.from(':').toString('base64')
-    }
-});
+async function frmUpload_Load() {
+    FormOpen(frmUpload);
+}
 
 async function cbxFile_OnChange() {
     fileData.classList.add('d-none');
@@ -29,6 +21,15 @@ async function progress(length) {
 }
 
 async function btnUpload_OnClick() {
+    const client = ipfsClient.create({
+        host: 'ipfs.infura.io',
+        port: 5001,
+        protocol: 'https',
+        headers: {
+            authorization: 'Basic ' + Buffer.from(store.get('credentials.user') + ':' + store.get('credentials.key')).toString('base64')
+        }
+    });
+
     if (cbxFile.checked && fileData.files.length > 0) {
         var buffer = fs.readFileSync(fileData.files[0].path);
         bytes = buffer.length;

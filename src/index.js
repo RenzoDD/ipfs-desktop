@@ -42,11 +42,8 @@ app.on('window-all-closed', () => {
 	myWindow.webContents.once('did-finish-load', function () { myWindow.show() });
 })();
 
+const Store = require('electron-store');
+const store = new Store();
 
-
-
-/*
-global.path = (process.env.APPDATA || (process.platform == 'darwin' ? process.env.HOME + '/Library/Preferences' : process.env.HOME + "/.local/share")) + "/ipfs-desktop";
-if (!fs.existsSync(global.path))
-	fs.mkdirSync(global.path);
-*/
+if (!store.get('credentials'))
+	store.set('credentials', { user: '', key: '' });

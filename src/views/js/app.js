@@ -8,3 +8,9 @@ function FormOpen(frm) {
 }
 
 FormOpen(frmUpload)
+
+const fs = require('fs');
+const ipfsClient = require('ipfs-http-client');
+
+const Store = require('electron-store');
+const store = new Store();
