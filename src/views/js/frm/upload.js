@@ -18,6 +18,8 @@ async function progress(length) {
     var x = (length / bytes * 100).toFixed(2);
     pbPercentage.style = `width: ${x}%`;
     pbPercentage.innerHTML = x + "%";
+
+    size.innerHTML = length;
 }
 
 async function btnUpload_OnClick() {

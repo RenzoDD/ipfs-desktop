@@ -25,9 +25,9 @@ app.on('window-all-closed', () => {
 
 	myWindow = new BrowserWindow({
 		width: 600,
-		height: 270,
+		height: 300,
 		webPreferences: {
-			//devTools: false,
+			devTools: false,
 			nodeIntegration: true,
 			contextIsolation: false
 		},
